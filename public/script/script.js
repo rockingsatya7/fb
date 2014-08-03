@@ -1,5 +1,14 @@
 $(document).ready(function(){
 
+  function checkLoginState() {
+   console.log('hi');    
+   FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+  }
+
+
+
 // This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
     console.log('statusChangeCallback');
@@ -36,12 +45,7 @@ $(document).ready(function(){
   // This function is called when someone finishes with the Login
   // Button.  See the onlogin handler attached to it in the sample
   // code below.
-$("#login").click( function () {
- console.log('hi');    
-FB.getLoginStatus(function(response) {
-      statusChangeCallback(response);
-    });
-  });
+
 
   window.fbAsyncInit = function() {
   FB.init({
@@ -83,7 +87,7 @@ FB.getLoginStatus(function(response) {
   // successful.  See statusChangeCallback() for when this call is made.
   function testAPI(val) {
     console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me', function(response) {
+     FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
        console.log(val);
         
