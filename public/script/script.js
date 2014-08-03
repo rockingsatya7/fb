@@ -43,7 +43,8 @@ $(document).ready(function(){
   // Button.  See the onlogin handler attached to it in the sample
   // code below.
   function checkLoginState() {
-    FB.getLoginStatus(function(response) {
+ console.log('hi');    
+FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
     });
   }
