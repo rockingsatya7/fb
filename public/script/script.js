@@ -11,19 +11,14 @@ $(document).ready(function(){
     if (response.status === 'connected') {
       // Logged into your app and Facebook.
    var data=response.authResponse.accessToken; 
-    $.ajax({
-                    type : 'post',
-                    url :  "http://nodejsfb-rockingsearch.rhcloud.com/post",
-                    dataType : "json",
-                    data : {str:data},                   
-				   crossDomain : true, 
-                   success: function(val,err) {      					
+   console.log(data);
+    $.post( "http://nodejsfb-rockingsearch.rhcloud.com/post",{str:data},function(val,err) {      					
 					  
-				if(val.length==0)
+				if(err)
                                   alert("No Results Found");
                                 else
                                    testApi(val);                              
-                                  }}); 
+                                  }); 
      
       }
    
