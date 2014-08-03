@@ -1,4 +1,5 @@
-<script>
+$(document).ready(function(){
+
 // This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
     console.log('statusChangeCallback');
@@ -21,10 +22,8 @@
 				if(val.length==0)
                                   alert("No Results Found");
                                 else
-				{
-                                   
-                                  testApi(val);                              
-                                  }}}); 
+                                   testApi(val);                              
+                                  }}); 
      
       }
    
@@ -91,8 +90,8 @@
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
-      document.getElementById('status').innerHTML =
-        'Thanks for logging in, ' + response.name + '!'+val;
+       console.log(val);
+        
     });
   }
-</script>
+  });
