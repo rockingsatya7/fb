@@ -18,7 +18,8 @@ $(document).ready(function(){
                                      console.log(val);
                                      testAPI(val);                              
      
-      }
+      });
+     }
    
    else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
