@@ -32,7 +32,11 @@ fs.readFile('./oauth1.html', function (err, html) {
         res.write(html);
 		res.end();
     });});
-
+app.post('/post',function(req,res){
+   var data=req.body.str;
+   console.log(str); 
+   res.send(str);
+});
 var port = process.env.OPENSHIFT_NODEJS_PORT || 8080  
 , ip = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
 
