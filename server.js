@@ -18,7 +18,8 @@ var enableCORS = function(req, res, next) {
     }
 };
 
-//app.use(express.static(path.join(__dirname, 'public')));
+app.use(body_parser());
+app.use(enableCORS);
 app.use("/script", express.static(__dirname + '/public/script'));
 
 app.get('/',function(req,res){
