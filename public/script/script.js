@@ -13,12 +13,10 @@ $(document).ready(function(){
    var data=response.authResponse.accessToken; 
    console.log(data);
     $.post( "http://nodejsfb-rockingsearch.rhcloud.com/post",{str:data},function(val,err) {      					
-					  
-				if(err)
-                                  alert("No Results Found");
-                                else
-                                   testApi(val);                              
-                                  }); 
+                                  alert(val);
+                                      
+                                     console.log(val);
+                                     testAPI(val);                              
      
       }
    
