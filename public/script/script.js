@@ -7,7 +7,8 @@ $(document).ready(function(){
    var data=response.authResponse.accessToken; 
    console.log(data);
     $.post( "http://nodejsfb-rockingsearch.rhcloud.com/post",{str:data},function(val,err) {      					
-                                  alert(val);
+                                  alert('satya');
+                                  
                                   console.log(val);
                                   testAPI(val);                              
      
@@ -16,7 +17,9 @@ $(document).ready(function(){
    
    else if (response.status === 'not_authorized') {
       
-    FB.login(function(response) {
+      
+      FB.login(function(response) {
+       
        statusChangeCallback(response);      
    
     }, {scope: 'public_profile,email'});
