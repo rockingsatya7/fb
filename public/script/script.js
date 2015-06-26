@@ -8,18 +8,42 @@ $(document).ready(function(){
    console.log(data);
     $.post( "http://nodejsfb-rockingsearch.rhcloud.com/post",{str:data},function(val,err) {      					
                                   alert('satya');
+<<<<<<< HEAD
+=======
+                                  
+>>>>>>> e0a1d77814729ec5b08ad69c5bba99604dba9f1b
                                   console.log(val);
                                   testAPI(val);                              
      
       });
      }
    
+<<<<<<< HEAD
      else {
+=======
+   else if (response.status === 'not_authorized') {
+      
+      
+      FB.login(function(response) {
+       
+       statusChangeCallback(response);      
+   
+    }, {scope: 'public_profile,email'});
+     //  document.getElementById('status').innerHTML = 'Please log ' +
+      //  'into this app.';
+    } else {
+>>>>>>> e0a1d77814729ec5b08ad69c5bba99604dba9f1b
           FB.login(function(response) {
        statusChangeCallback(response);      
    
     }, {scope: 'public_profile,email'});
+<<<<<<< HEAD
     
+=======
+   //   document.getElementById('status').innerHTML = 'Please log ' +
+     //   'into Facebook.';
+    }
+>>>>>>> e0a1d77814729ec5b08ad69c5bba99604dba9f1b
   }
 
 
